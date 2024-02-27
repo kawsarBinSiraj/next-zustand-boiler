@@ -12,7 +12,7 @@ const ThemeChanger = () => {
                     setTheme(theme == "light" ? "dark" : "light");
                 }}
             >
-                Switch to {theme == "light" ? "dark" : "light"} Mode
+                Switch to {theme == "dark" ? "light" : "dark"} Mode
             </button>
         </>
     );
