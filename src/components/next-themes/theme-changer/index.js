@@ -11,7 +11,7 @@ const ThemeChanger = () => {
                 onClick={(e) => {
                     e.preventDefault();
                     if (theme === "dark") setTheme("light");
-                    else if (theme === "light") setTheme("dark");
+                    else setTheme("dark");
                 }}
             >
                 Switch to {theme == "dark" ? "light" : "dark"} Mode
