@@ -1,5 +1,6 @@
 import { Flip } from "react-toastify";
 import { v4 as uuIdv4 } from "uuid";
+import { toast } from "react-toastify";
 import _ from "lodash";
 
 /**
@@ -9,7 +10,7 @@ import _ from "lodash";
  * @param error
  * @returns {ToastId | void | never | *|*}
  */
-export const toastNotify = (toast, type, error) => {
+export const toastNotify = (type, error) => {
     let message = "";
     if (!_.isUndefined(error.data) && !_.isUndefined(error.data.message)) {
         message = error.data.message;
@@ -24,18 +25,26 @@ export const toastNotify = (toast, type, error) => {
     if (type === "success") {
         return toast.success(message, {
             position: toast.POSITION.TOP_RIGHT,
+            transition: Flip,
+            theme: "colored",
         });
     } else if (type === "info") {
         return toast.info(message, {
             position: toast.POSITION.TOP_RIGHT,
+            transition: Flip,
+            theme: "colored",
         });
     } else if (type === "warning") {
         return toast.warn(message, {
             position: toast.POSITION.TOP_RIGHT,
+            transition: Flip,
+            theme: "colored",
         });
     } else if (type === "error") {
         return toast.error(message, {
             position: toast.POSITION.TOP_RIGHT,
+            transition: Flip,
+            theme: "colored",
         });
     }
 };

@@ -45,8 +45,8 @@ export const login = (callback) => {
  */
 export const logout = async (callback) => {
     sessionStorage.clear();
-    Cookies.remove("access_token");
     localStorage.clear();
+    Cookies.remove("access_token");
     if (typeof callback === "function") return callback();
     window.location.href = process.env.PUBLIC_URL + "/login";
 };
