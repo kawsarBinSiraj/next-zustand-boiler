@@ -7,9 +7,11 @@ const ThemeChanger = () => {
     return (
         <>
             <button
-                className={`btn rounded-0 btn-${theme == "light" ? "dark" : "light"}`}
-                onClick={() => {
-                    setTheme(theme == "light" ? "dark" : "light");
+                className={`btn rounded-0 btn-${theme}`}
+                onClick={(e) => {
+                    e.preventDefault();
+                    if (theme === "dark") setTheme("light");
+                    else if (theme === "light") setTheme("dark");
                 }}
             >
                 Switch to {theme == "dark" ? "light" : "dark"} Mode
